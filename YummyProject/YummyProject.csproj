@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\YummyContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -281,6 +282,8 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\reservation.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\stats-bg.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\team-shape.svg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\testabout.jpg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\testabout2.jpeg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-1.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-2.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-3.jpg" />
@@ -487,6 +490,9 @@
     <Content Include="Templates\login-form-02\scss\style.scss" />
     <Content Include="Views\Login\SignIn.cshtml" />
     <Content Include="Views\UILayout\SocialMedias.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\AddAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
