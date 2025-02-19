@@ -1,0 +1,52 @@
+﻿@model List<YummyProject.Models.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Kategori</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+
+                <td>@count</td>
+                <td>@item.CategoryName</td>
+                <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-info">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>

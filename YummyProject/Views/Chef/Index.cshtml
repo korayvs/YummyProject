@@ -1,0 +1,71 @@
+﻿@model List<YummyProject.Models.Chef>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Şefler</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Resim</th>
+            <th>Adı</th>
+            <th>Ünvan</th>
+            <th>Açıklama</th>
+            <th>Sosyal Medya</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+
+                    <td>@count</td>
+                    <td><img src="@item.ImageUrl" style="width:200px; height:200px" alt="Chef Image" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><a href="/ChefSocial/Index/@item.ChefId"class="btn btn-dark">Şeflerin Sosyal Medya Hesapları</a></td>
+                    <td><a href="/Chef/DeleteChef/@item.ChefId"class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Chef/UpdateChef/@item.ChefId"class="btn btn-info">Güncelle</a></td>
+
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">Şef mevcut değil.</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/Chef/AddChef" class="btn btn-primary">Yeni Şef Ekle</a>
