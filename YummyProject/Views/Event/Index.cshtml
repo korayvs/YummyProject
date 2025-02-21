@@ -1,0 +1,66 @@
+﻿@model List<YummyProject.Models.Event>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Etkinlikler</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Resim</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Fiyatı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td><img src="@item.ImageUrl" style="width:200px; height:200px" alt="Project Image" /></td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                    <td><a href="/Event/DeleteEvent/@item.EventId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Event/UpdateEvent/@item.EventId" class="btn btn-info">Güncelle</a></td>
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">Etkinlik yok.</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/Event/CreateEvent" class="btn btn-primary">Yeni Etkinlik Ekle</a>

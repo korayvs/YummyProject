@@ -1,0 +1,36 @@
+﻿@model YummyProject.Models.ContactInfo
+@{
+    ViewBag.Title = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İletişim Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.ContactInfoId)
+    <label>Adres</label>
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Address) </p>
+    <br />
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Email) </p>
+    <br />
+    <label>Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.PhoneNumber) </p>
+    <br />
+    <label>Harita Url</label>
+    @Html.TextAreaFor(x => x.MapUrl, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.MapUrl) </p>
+    <br />
+    <label>Çalışma Saatleri</label>
+    @Html.TextAreaFor(x => x.OpenHours, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.OpenHours) </p>
+    <br />
+
+    <button class="btn btn-outline-info">Güncelle</button>
+
+</form>

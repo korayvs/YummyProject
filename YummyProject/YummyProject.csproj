@@ -134,8 +134,10 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ChefSocialController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -162,6 +164,10 @@
     <Compile Include="Migrations\202412241842328_mig_socialmedia_table_added.cs" />
     <Compile Include="Migrations\202412241842328_mig_socialmedia_table_added.Designer.cs">
       <DependentUpon>202412241842328_mig_socialmedia_table_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502211453488_mig-chef-social.cs" />
+    <Compile Include="Migrations\202502211453488_mig-chef-social.Designer.cs">
+      <DependentUpon>202502211453488_mig-chef-social.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -505,6 +511,9 @@
     <Content Include="Views\ChefSocial\Index.cshtml" />
     <Content Include="Views\ChefSocial\AddChefSocial.cshtml" />
     <Content Include="Views\ChefSocial\UpdateChefSocial.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\UpdateContact.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -551,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412241842328_mig_socialmedia_table_added.resx">
       <DependentUpon>202412241842328_mig_socialmedia_table_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502211453488_mig-chef-social.resx">
+      <DependentUpon>202502211453488_mig-chef-social.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

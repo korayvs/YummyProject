@@ -1,0 +1,43 @@
+﻿@model List<YummyProject.Models.ContactInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>İletişim</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Adres</th>
+            <th>Email</th>
+            <th>Telefon Numarası</th>
+            <th>Harita Url</th>
+            <th>Çalışma Saatleri</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var cont in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@cont.Address</td>
+                <td>@cont.Email</td>
+                <td>@cont.PhoneNumber</td>
+                <td><iframe style="width: 100%; height: 75px;" src="@cont.MapUrl" frameborder="0" allowfullscreen=""></iframe></td>
+                <td>@cont.OpenHours</td>
+                <td><a href="/Contact/UpdateContact/@cont.ContactInfoId" class="btn btn-info">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
