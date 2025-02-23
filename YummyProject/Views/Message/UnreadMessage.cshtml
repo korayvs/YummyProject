@@ -1,0 +1,66 @@
+﻿@model List<YummyProject.Models.Message>
+@{
+    ViewBag.Title = "UnreadMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Okunmamış Mesajlar</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Gönderen Ad-Soyad</th>
+            <th>Email</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Okundu Olarak</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Subject</td>
+                    <td>@item.MessageContent</td>
+                    <td>
+                        <a href="@Url.Action("MarkAsRead", new { id = item.MessageId })" class="btn btn-secondary btn-sm" onclick="return confirm('Mesajı okundu olarak işaretlemek istediğinize emin misiniz?')">
+                            İşaretle
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">Okunmamış mesaj yok.</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}

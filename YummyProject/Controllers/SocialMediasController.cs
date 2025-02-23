@@ -8,70 +8,69 @@ using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
-    public class EventController : Controller
+    public class SocialMediasController : Controller
     {
         YummyContext context = new YummyContext();
         public ActionResult Index()
         {
-            var values = context.Events.ToList();
+            var values = context.SocialMedias.ToList();
             return View(values);
         }
 
-        public ActionResult CreateEvent()
+        public ActionResult AddSocialMed()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult CreateEvent(Event evnt)
+        public ActionResult AddSocialMed(SocialMedia socmed)
         {
             if (!ModelState.IsValid)
             {
-                return View(evnt);
+                return View(socmed);
             }
-            context.Events.Add(evnt);
+            context.SocialMedias.Add(socmed);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteEvent(int id)
+        public ActionResult DeleteSocialMed(int id)
         {
-            var count = context.Events.Count();
+            var count = context.SocialMedias.Count();
             if (count > 4)
             {
-                var deleted_value = context.Events.Find(id);
-                context.Events.Remove(deleted_value);
+                var deleted_value = context.SocialMedias.Find(id);
+                context.SocialMedias.Remove(deleted_value);
                 context.SaveChanges();
 
             }
             else
             {
-                TempData["ErrorMessage"] = "En az 4 etkinliğin bulunması gerekiyor.";
+                TempData["ErrorMessage"] = "En az 4 sosyal medya hesabı bulunması gerekiyor.";
 
             }
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateEvent(int id)
+        public ActionResult UpdateSocialMed(int id)
         {
-            var values = context.Events.Find(id);
+            var values = context.SocialMedias.Find(id);
             return View(values);
 
         }
 
         [HttpPost]
-        public ActionResult UpdateEvent(Event evnt)
+        public ActionResult UpdateSocialMed(SocialMedia scmd)
         {
 
-            var value = context.Events.Find(evnt.EventId);
-            value.ImageUrl = evnt.ImageUrl;
-            value.Title = evnt.Title;
-            value.Description = evnt.Description;
-            value.Price = evnt.Price;
+            var value = context.SocialMedias.Find(scmd.SocialMediaId);
+            value.Url = scmd.Url;
+            value.Title = scmd.Title;
+            value.Icon = scmd.Icon;
 
             if (!ModelState.IsValid)
             {
-                return View(evnt);
+                return View(scmd);
             }
             context.SaveChanges();
             return RedirectToAction("Index");

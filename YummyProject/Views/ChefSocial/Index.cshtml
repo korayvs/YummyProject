@@ -25,21 +25,31 @@
     </thead>
 
     <tbody>
-        @foreach (var item in Model)
+        @if (Model != null && Model.Any())
         {
-            count++;
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+
+                    <td>@count</td>
+                    <td>@item.Url</td>
+                    <td>@item.Icon</td>
+                    <td>@item.SocialMediaName</td>
+                    <td><a href="/ChefSocial/DeleteChefSocial/@item.ChefSocialId" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/ChefSocial/UpdateChefSocial/@item.ChefSocialId" class="btn btn-info">Update</a></td>
+
+                </tr>
+
+                chefid = @item.ChefId;  //ChefId'yi güncelleme
+            }
+        }
+
+        else
+        {
             <tr>
-
-                <td>@count</td>
-                <td>@item.Url</td>
-                <td>@item.Icon</td>
-                <td>@item.SocialMediaName</td>
-                <td><a href="/ChefSocial/DeleteChefSocial/@item.ChefSocialId"class="btn btn-danger">Delete</a></td>
-                <td><a href="/ChefSocial/UpdateChefSocial/@item.ChefSocialId"class="btn btn-info">Update</a></td>
-
+                <td colspan="6" class="text-center">Sosyal medyası yok.</td>
             </tr>
-
-            chefid = @item.ChefId;  //ChefId'yi güncelleme
         }
     </tbody>
 

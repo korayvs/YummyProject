@@ -1,0 +1,64 @@
+﻿@model List<YummyProject.Models.PhotoGallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Fotoğraf Galerisi</h2>
+<br />
+
+<table class="table table-bordered text-center">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th style="width:90%">Fotoğraf</th>
+            <th>Sil</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td class="text-center align-middle">@count</td>
+                    <td class="text-center align-middle">
+                        <img src="@item.ImageUrl" style="width: 400px; height: 300px" alt="Görsel Yüklenemedi" />
+                    </td>
+                    <td class="text-center align-middle">
+                        <a href="@Url.Action("DeletePhotoGal", new { id = item.PhotoGalleryId })" class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center">Fotoğraf yok.</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/PhotoGallery/AddPhotoGallery" class="btn btn-primary">Yeni Fotoğraf Ekle</a>

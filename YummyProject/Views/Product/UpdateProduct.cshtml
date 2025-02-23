@@ -1,0 +1,36 @@
+﻿@model YummyProject.Models.Product
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Ürün Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.ProductId)
+    <label>Ürün Resmi</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.ImageUrl) </p>
+    <br />
+    <label>Ürün Adı</label>
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.ProductName) </p>
+    <br />
+    <label>İçindekiler</label>
+    @Html.TextAreaFor(x => x.Ingredients, 3, 1, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Ingredients) </p>
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Price) </p>
+    <br />
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control " })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.CategoryId) </p>
+    <br />
+
+    <button class="btn btn-outline-info">Güncelle</button>
+
+</form>

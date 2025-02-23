@@ -141,6 +141,12 @@
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\PhotoGalleryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SocialMediasController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Controllers\UILayoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +294,8 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\menu-item-4.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\menu-item-5.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\menu-item-6.png" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\mercimek-corba.png" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\yayla-corbasi.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\reservation.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\stats-bg.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\team-shape.svg" />
@@ -514,6 +522,23 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\UpdateContact.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\CreateEvent.cshtml" />
+    <Content Include="Views\Event\UpdateEvent.cshtml" />
+    <Content Include="Views\Message\UnreadMessage.cshtml" />
+    <Content Include="Views\Message\ReadMessages.cshtml" />
+    <Content Include="Views\PhotoGallery\Index.cshtml" />
+    <Content Include="Views\PhotoGallery\AddPhotoGallery.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
+    <Content Include="Views\Product\UpdateProduct.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\UpdateService.cshtml" />
+    <Content Include="Views\SocialMedias\Index.cshtml" />
+    <Content Include="Views\SocialMedias\AddSocialMed.cshtml" />
+    <Content Include="Views\SocialMedias\UpdateSocialMed.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

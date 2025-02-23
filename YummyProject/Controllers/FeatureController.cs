@@ -23,7 +23,6 @@ namespace YummyProject.Controllers
         }
 
         [HttpPost]
-
         public ActionResult AddFeature(Feature feature)
         {
             if (!ModelState.IsValid)

@@ -1,0 +1,54 @@
+﻿@model List<YummyProject.Models.SocialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Sosyal Medyalarımız</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Url</th>
+            <th>Adı</th>
+            <th>Icon</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Url</td>
+                <td>@item.Title</td>
+                <td>@item.Icon</td>
+                <td><a href="/SocialMedias/DeleteSocialMed/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/SocialMedias/UpdateSocialMed/@item.SocialMediaId" class="btn btn-info">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/SocialMedias/AddSocialMed" class="btn btn-primary">Yeni Sosyal Medya Ekle</a>

@@ -15,10 +15,10 @@
         <tr>
             <th>#</th>
             <th>Resim</th>
-            <th>Adı</th>
-            <th>Ünvan</th>
-            <th>Açıklama</th>
-            <th>Sosyal Medya</th>
+            <th style="width:10%">Adı</th>
+            <th style="width:10%">Ünvan</th>
+            <th style="width:45%">Açıklama</th>
+            <th>Sosyal Medya Hesapları</th>
             <th>Sil</th>
             <th>Güncelle</th>
         </tr>
@@ -33,14 +33,14 @@
                 count++;
                 <tr>
 
-                    <td>@count</td>
-                    <td><img src="@item.ImageUrl" style="width:200px; height:200px" alt="Chef Image" /></td>
+                    <td class="text-center align-middle">@count</td>
+                    <td><img src="@item.ImageUrl" style="width:100px; height:100px" alt="Chef Image" /></td>
                     <td>@item.Name</td>
                     <td>@item.Title</td>
                     <td>@item.Description</td>
-                    <td><a href="/ChefSocial/Index/@item.ChefId"class="btn btn-dark">Şeflerin Sosyal Medya Hesapları</a></td>
-                    <td><a href="/Chef/DeleteChef/@item.ChefId"class="btn btn-danger">Sil</a></td>
-                    <td><a href="/Chef/UpdateChef/@item.ChefId"class="btn btn-info">Güncelle</a></td>
+                    <td class="text-center align-middle"><a href="/ChefSocial/Index/@item.ChefId"class="btn btn-dark">Sosyal Medyalarına Git</a></td>
+                    <td class="text-center align-middle"><a href="/Chef/DeleteChef/@item.ChefId"class="btn btn-danger">Sil</a></td>
+                    <td class="text-center align-middle"><a href="/Chef/UpdateChef/@item.ChefId"class="btn btn-info">Güncelle</a></td>
 
                 </tr>
             }

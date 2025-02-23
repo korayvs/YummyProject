@@ -1,0 +1,28 @@
+﻿@model YummyProject.Models.SocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMed";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sosyal Medya Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.SocialMediaId)
+    <label>Url</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Url) </p>
+    <br />
+    <label>Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Title) </p>
+    <br />
+    <label>Icon</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Icon) </p>
+    <br />
+
+    <button class="btn btn-outline-info">Güncelle</button>
+
+</form>

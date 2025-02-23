@@ -1,11 +1,11 @@
-﻿@model List<YummyProject.Models.Event>
+﻿@model List<YummyProject.Models.Testimonial>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-<h2>Etkinlikler</h2>
+<h2>Referanslar</h2>
 <br />
 
 <table class="table table-bordered">
@@ -14,10 +14,11 @@
 
         <tr>
             <th>#</th>
-            <th>Resim</th>
-            <th>Etkinlik Adı</th>
-            <th>Açıklama</th>
-            <th>Fiyatı</th>
+            <th>Resim </th>
+            <th>Ad Soyad</th>
+            <th>Ünvanı</th>
+            <th>Mesaj</th>
+            <th>Puanı</th>
             <th>Sil</th>
             <th>Güncelle</th>
         </tr>
@@ -32,12 +33,13 @@
                 count++;
                 <tr>
                     <td>@count</td>
-                    <td><img src="@item.ImageUrl" style="width:80px; height:80px" alt="Görsel Yüklenemedi" /></td>
+                    <td><img src="@item.ImageUrl" style="width:200px; height:200px" alt="Project Image" /></td>
+                    <td>@item.NameSurname</td>
                     <td>@item.Title</td>
-                    <td>@item.Description</td>
-                    <td>@item.Price</td>
-                    <td><a href="/Event/DeleteEvent/@item.EventId" class="btn btn-danger">Sil</a></td>
-                    <td><a href="/Event/UpdateEvent/@item.EventId" class="btn btn-info">Güncelle</a></td>
+                    <td>@item.Comment</td>
+                    <td>@item.Rating</td>
+                    <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-info">Güncelle</a></td>
                 </tr>
             }
         }
@@ -45,7 +47,7 @@
         else
         {
             <tr>
-                <td colspan="7" class="text-center">Etkinlik yok.</td>
+                <td colspan="8" class="text-center">Referans yok.</td>
             </tr>
         }
     </tbody>
@@ -63,4 +65,4 @@
     <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
 }
 
-<a href="/Event/CreateEvent" class="btn btn-primary">Yeni Etkinlik Ekle</a>
+<a href="/Testimonial/AddTestimonial" class="btn btn-primary">Yeni Referans Ekle</a>

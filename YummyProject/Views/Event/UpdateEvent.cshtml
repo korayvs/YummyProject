@@ -1,0 +1,31 @@
+﻿@model YummyProject.Models.Event
+@{
+    ViewBag.Title = "UpdateEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Etkinlik Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.EventId)
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.ImageUrl) </p>
+    <br />
+    <label>Etkinlik Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Title) </p>
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Description) </p>
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Price) </p>
+    <br />
+    <button class="btn btn-outline-info">Güncelle</button>
+
+</form>
