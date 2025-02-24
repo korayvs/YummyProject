@@ -1,0 +1,63 @@
+﻿@model List<YummyProject.Models.Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Rezervasyonlar</h2>
+<br />
+
+@using (Html.BeginForm("ApproveRes", "Booking", FormMethod.Post))
+{
+    <table class="table table-bordered table-hover">
+
+        <thead>
+
+            <tr>
+                <th>#</th>
+                <th>Ad Soyad</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Tarih</th>
+                <th>Kişi Sayısı</th>
+                <th>Mesaj</th>
+                <th>Durumu</th>
+                <th>Seç</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.BookingId</td>
+                    <td>@booking.Name</td>
+                    <td>@booking.Email</td>
+                    <td>@booking.Phone</td>
+                    <td>@booking.BookingDate.ToShortDateString()</td>
+                    <td>@booking.PersonCount</td>
+                    <td>@booking.MessageContent</td>
+                    <td style="background-color: @(booking.IsApproved ? "green" : "red"); color: white;">@(booking.IsApproved ? "Onaylandı" : "Onaylanmadı")</td>
+                    <td>
+                        <input type="checkbox" name="approvedBkngs" value="@booking.BookingId" @(booking.IsApproved ? "checked" : "") />
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <br />
+
+    <button type="submit" class="btn btn-success">Rezervasyon Güncelle</button>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}

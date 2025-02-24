@@ -1,0 +1,55 @@
+﻿@model List<YummyProject.Models.Booking>
+@{
+    ViewBag.Title = "ShowApproved";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Onaylanmış Rezervasyonlar</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Tarih</th>
+            <th>Kişi Sayısı</th>
+            <th>Mesaj</th>
+            <th>Onaylı mı</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.BookingId</td>
+                    <td>@booking.Name</td>
+                    <td>@booking.Email</td>
+                    <td>@booking.Phone</td>
+                    <td>@booking.BookingDate.ToShortDateString()</td>
+                    <td>@booking.PersonCount</td>
+                    <td>@booking.MessageContent</td>
+                    <td>Onaylandı</td>
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">Onaylanmış rezervasyon yok.</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+<a href="/Booking/Index" class="btn btn-primary">Geri Dön</a>

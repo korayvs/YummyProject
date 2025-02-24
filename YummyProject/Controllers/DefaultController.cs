@@ -34,6 +34,5 @@ namespace YummyProject.Controllers
             var values = context.Categories.ToList();
             return PartialView(values);
         }
-
     }
 }

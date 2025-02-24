@@ -131,6 +131,7 @@
     <Compile Include="Context\YummyContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ChefSocialController.cs" />
@@ -539,6 +540,10 @@
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
     <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Booking\FormBooking.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Booking\ShowApproved.cshtml" />
+    <Content Include="Views\Booking\ShowUnApproved.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
