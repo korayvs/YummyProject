@@ -34,5 +34,15 @@ namespace YummyProject.Controllers
             var values = context.Categories.ToList();
             return PartialView(values);
         }
+        public PartialViewResult DefaultBooking()
+        {
+            var values = context.Bookings.ToList();
+            return PartialView(values);
+        }
+
+        public ActionResult Booking()
+        {
+            return View();
+        }
     }
 }

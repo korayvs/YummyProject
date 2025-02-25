@@ -14,7 +14,7 @@
         <thead>
 
             <tr>
-                <th>#</th>
+                @*<th>#</th>*@
                 <th>Ad Soyad</th>
                 <th>Email</th>
                 <th>Telefon</th>
@@ -23,6 +23,7 @@
                 <th>Mesaj</th>
                 <th>Durumu</th>
                 <th>Seç</th>
+                <th>Sil</th>
             </tr>
 
         </thead>
@@ -31,17 +32,18 @@
             @foreach (var booking in Model)
             {
                 <tr>
-                    <td>@booking.BookingId</td>
+                    @*<td>@booking.BookingId</td>*@
                     <td>@booking.Name</td>
                     <td>@booking.Email</td>
                     <td>@booking.Phone</td>
-                    <td>@booking.BookingDate.ToShortDateString()</td>
+                    <td>@booking.BookingDate.ToString()</td>
                     <td>@booking.PersonCount</td>
                     <td>@booking.MessageContent</td>
                     <td style="background-color: @(booking.IsApproved ? "green" : "red"); color: white;">@(booking.IsApproved ? "Onaylandı" : "Onaylanmadı")</td>
                     <td>
                         <input type="checkbox" name="approvedBkngs" value="@booking.BookingId" @(booking.IsApproved ? "checked" : "") />
                     </td>
+                    <td><a href="/Booking/DeleteBooking/@booking.BookingId" class="btn btn-danger btn-sm">Sil</a></td>
                 </tr>
             }
         </tbody>

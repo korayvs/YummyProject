@@ -26,8 +26,11 @@ namespace YummyProject.Controllers
                 TimeSpan parsedTime = TimeSpan.Parse(time);
                 booking.BookingDate = parsedDate.Date + parsedTime;
 
-                context.Bookings.Add(booking);
-                context.SaveChanges();
+                using (var cntxt = new YummyContext())
+                {
+                    cntxt.Bookings.Add(booking);
+                    cntxt.SaveChanges();
+                }
                 return RedirectToAction("Index", "Default");
             }
 
@@ -48,22 +51,25 @@ namespace YummyProject.Controllers
         {
             try
             {
-                var allBookings = context.Bookings.ToList();
-
-                foreach (var booking in allBookings)
+                using (var cntxt = new YummyContext())
                 {
-                    if (approvedBkngs != null && approvedBkngs.Contains(booking.BookingId))
+                    var allBookings = cntxt.Bookings.ToList();
+
+                    foreach (var booking in allBookings)
                     {
-                        booking.IsApproved = true;
+                        if (approvedBkngs != null && approvedBkngs.Contains(booking.BookingId))
+                        {
+                            booking.IsApproved = true;
+                        }
+
+                        else
+                        {
+                            booking.IsApproved = false;
+                        }
                     }
 
-                    else
-                    {
-                        booking.IsApproved = false;
-                    }
+                    cntxt.SaveChanges();
                 }
-
-                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -80,11 +86,20 @@ namespace YummyProject.Controllers
             var bookings = context.Bookings.Where(x => x.IsApproved == true).ToList();
             return View(bookings);
         }
-        
+
         public ActionResult ShowUnApproved()
         {
             var bookings = context.Bookings.Where(x => x.IsApproved == false).ToList();
             return View(bookings);
+        }
+
+        public ActionResult DeleteBooking(int id)
+        {
+            var value = context.Bookings.Find(id);
+            context.Bookings.Remove(value);
+            context.SaveChanges();
+            TempData["SuccessMessage"] = "Rezervasyon silindi.";
+            return RedirectToAction("Index");
         }
     }
 }

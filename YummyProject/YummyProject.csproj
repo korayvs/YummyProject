@@ -176,6 +176,10 @@
     <Compile Include="Migrations\202502211453488_mig-chef-social.Designer.cs">
       <DependentUpon>202502211453488_mig-chef-social.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502251931074_mig_bookings.cs" />
+    <Compile Include="Migrations\202502251931074_mig_bookings.Designer.cs">
+      <DependentUpon>202502251931074_mig_bookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -540,10 +544,10 @@
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
     <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
-    <Content Include="Views\Booking\FormBooking.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Booking\ShowApproved.cshtml" />
     <Content Include="Views\Booking\ShowUnApproved.cshtml" />
+    <Content Include="Views\Booking\FormBooking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -593,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502211453488_mig-chef-social.resx">
       <DependentUpon>202502211453488_mig-chef-social.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502251931074_mig_bookings.resx">
+      <DependentUpon>202502251931074_mig_bookings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
