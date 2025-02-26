@@ -1,0 +1,31 @@
+﻿@model List<YummyProject.Models.Message>
+
+<form action="/Default/SendMessage" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+    <div class="row gy-4">
+
+        <div class="col-md-6">
+            <input type="text" name="name" class="form-control" placeholder="Adınız Soyadınız" required="">
+        </div>
+
+        <div class="col-md-6 ">
+            <input type="email" class="form-control" name="email" placeholder="Eposta Adresiniz" required="">
+        </div>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" name="subject" placeholder="Konu" required="">
+        </div>
+
+        <div class="col-md-12">
+            <textarea class="form-control" name="messagecontent" rows="6" placeholder="Mesajınızı buraya yazabilirsiniz" required=""></textarea>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="loading">Yükleniyor...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Mesajınız gönderildi. Teşekkür ederiz!</div>
+
+            <button type="submit">Mesaj Gönder</button>
+        </div>
+
+    </div>
+</form> <!-- End Contact Form -->

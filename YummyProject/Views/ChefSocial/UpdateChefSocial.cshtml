@@ -10,17 +10,17 @@
 
     @Html.HiddenFor(x => x.ChefSocialId)
     @Html.HiddenFor(x => x.ChefId)
-    <label>Name</label>
-    @Html.TextBoxFor(x => x.SocialMediaName, new { @class = "form-control" })
-    <p class="text-danger"> @Html.ValidationMessageFor(x => x.SocialMediaName) </p>
+    <label>Link</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Url) </p>
     <br />
-    <label> Title</label>
+    <label>Icon</label>
     @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
     <p class="text-danger"> @Html.ValidationMessageFor(x => x.Icon) </p>
     <br />
-    <label> Description</label>
-    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
-    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Url) </p>
+    <label>Sosyal Medya Adı</label>
+    @Html.TextBoxFor(x => x.SocialMediaName, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.SocialMediaName) </p>
     <br />
 
     <button class="btn btn-outline-success">Güncelle</button>

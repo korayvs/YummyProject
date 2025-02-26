@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using YummyProject.Context;
+using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
@@ -34,6 +36,7 @@ namespace YummyProject.Controllers
             var values = context.Categories.ToList();
             return PartialView(values);
         }
+
         public PartialViewResult DefaultBooking()
         {
             var values = context.Bookings.ToList();
@@ -43,6 +46,68 @@ namespace YummyProject.Controllers
         public ActionResult Booking()
         {
             return View();
+        }
+
+        public PartialViewResult DefaultChefs()
+        {
+            var values = context.Chefs.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultContactInfo()
+        {
+            var values = context.ContactInfos.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultMessage()
+        {
+            var values = context.Messages.ToList();
+            return PartialView(values);
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Models.Message msg)
+        {
+            msg.IsRead = false;
+            if (ModelState.IsValid)
+            {
+                context.Messages.Add(msg);
+                context.SaveChanges();
+                TempData["Message"] = "Mesajınız gönderildi";
+                return RedirectToAction("Index", msg);
+            }
+
+            return RedirectToAction("Index", msg);
+        }
+
+        public PartialViewResult DefaultEvent()
+        {
+            var values = context.Events.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultPhotoGallery()
+        {
+            var values = context.PhotoGalleries.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultService()
+        {
+            var values = context.Services.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultTestimonial()
+        {
+            var values = context.Testimonials.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultStats()
+        {
+            return PartialView();
         }
     }
 }

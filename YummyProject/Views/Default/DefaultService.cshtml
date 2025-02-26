@@ -1,0 +1,38 @@
+﻿@model List<YummyProject.Models.Service>
+<section id="why-us" class="why-us section light-background">
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-box">
+                    <h3>Neden Bizi Seçmelisiniz	</h3>
+                    <p>
+                        Lezzet tutkunları için özenle hazırlanmış menümüz, taze ve kaliteli malzemelerle hazırlanarak her damak zevkine hitap ediyor. Sıcak ve samimi atmosferimizde, güler yüzlü ekibimizle misafirlerimize kusursuz bir deneyim sunuyoruz. Müşteri memnuniyetini her zaman ön planda tutarak, özel günleriniz ve etkinlikleriniz için de unutulmaz anlar yaratıyoruz.
+                    </p>
+                </div>
+            </div><!-- End Why Box -->
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+                    @foreach (var srvc in Model)
+                    {
+                        <div class="col-xl-4">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="@srvc.Icon"></i>
+                                <h4>@srvc.Title</h4>
+                                <p>@srvc.Description</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+                    }
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

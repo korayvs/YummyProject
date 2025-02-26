@@ -310,6 +310,8 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-2.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-3.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\y-100.png" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\y-a-100.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\js\main.js" />
     <Content Include="Templates\yummy-red-1.0.0\assets\scss\Readme.txt" />
     <Content Include="Templates\yummy-red-1.0.0\assets\vendor\aos\aos.cjs.js" />
@@ -548,6 +550,15 @@
     <Content Include="Views\Booking\ShowApproved.cshtml" />
     <Content Include="Views\Booking\ShowUnApproved.cshtml" />
     <Content Include="Views\Booking\FormBooking.cshtml" />
+    <Content Include="Views\Default\DefaultChefs.cshtml" />
+    <Content Include="Views\Default\DefaultContactInfo.cshtml" />
+    <Content Include="Views\Default\DefaultMessage.cshtml" />
+    <Content Include="Views\Default\DefaultEvent.cshtml" />
+    <Content Include="Views\Default\DefaultPhotoGallery.cshtml" />
+    <Content Include="Views\Default\DefaultService.cshtml" />
+    <Content Include="Views\Feature\UpdateFeature.cshtml" />
+    <Content Include="Views\Default\DefaultTestimonial.cshtml" />
+    <Content Include="Views\Default\DefaultStats.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
