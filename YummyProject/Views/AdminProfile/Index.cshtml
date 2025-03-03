@@ -1,0 +1,60 @@
+﻿@model List<YummyProject.Models.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Admin Profil Bilgileri</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+            <th>Resim</th>
+            <th>Adı Soyadı</th>
+            <th>Kullanıcı Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="@item.ImageUrl" style="width:80px; height:80px" alt="Görsel Yüklenemedi" /></td>
+                    <td>@item.NameSurname</td>
+                    <td>@item.UserName</td>
+                    <td><a href="/AdminProfile/DeleteAdminP/@item.AdminId" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
+                    <td><a href="/AdminProfile/UpdateAdminP/@item.AdminId" class="btn btn-info"><i class="fas fa-edit"></i></a></td>
+                </tr>
+            }
+        }
+
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">Resim yok.</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<br />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["ErrorMessage"] </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert"> @TempData["SuccessMessage"] </div>
+}
+
+<a href="/AdminProfile/AddAdminP" class="btn btn-primary">Yeni Admin Ekle</a>

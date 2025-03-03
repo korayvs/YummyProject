@@ -1,0 +1,33 @@
+﻿@model YummyProject.Models.Admin
+@{
+    ViewBag.Title = "UpdateAdminp";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Admin Profili Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.AdminId)
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.ImageUrl) </p>
+    <br />
+    <label>Adı Soyadı</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.NameSurname) </p>
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.UserName) </p>
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <p class="text-danger"> @Html.ValidationMessageFor(x => x.Password) </p>
+    <br />
+
+    <button class="btn btn-outline-info">Güncelle</button>
+    <a href="@Url.Action("Index", "AdminProfile")" class="btn btn-outline-danger">İptal</a>
+
+</form>

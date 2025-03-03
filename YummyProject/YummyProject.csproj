@@ -131,6 +131,7 @@
     <Compile Include="Context\YummyContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminProfileController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
@@ -275,6 +276,8 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\about-2.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\about.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\apple-touch-icon.png" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\baby-shower.jpg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\bekarliga-veda.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\chefs\chefs-1.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\chefs\chefs-2.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\chefs\chefs-3.jpg" />
@@ -282,6 +285,7 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\events-2.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\events-3.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\events-4.jpg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\evlilik_yildonumu.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\favicon.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\gallery\gallery-1.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\gallery\gallery-2.jpg" />
@@ -331,7 +335,9 @@
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\tiramisu.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\wine.png" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\menu\yayla-corbasi.png" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\random man.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\reservation.jpg" />
+    <Content Include="Templates\yummy-red-1.0.0\assets\img\sirket-kutlmasi.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\stats-bg.jpg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\team-shape.svg" />
     <Content Include="Templates\yummy-red-1.0.0\assets\img\testabout.jpg" />
@@ -589,6 +595,9 @@
     <Content Include="Views\Feature\UpdateFeature.cshtml" />
     <Content Include="Views\Default\DefaultTestimonial.cshtml" />
     <Content Include="Views\Default\DefaultStats.cshtml" />
+    <Content Include="Views\AdminProfile\Index.cshtml" />
+    <Content Include="Views\AdminProfile\AddAdminP.cshtml" />
+    <Content Include="Views\AdminProfile\UpdateAdminp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
