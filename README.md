@@ -1,4 +1,4 @@
-## 🍽️ **Yummy Project Restaurant Yönetim Sistemi**
+# 🍽️ **Yummy Project Restaurant Yönetim Sistemi**
 - ## 🏠 **Ana Arayüz (Herkes için erişebilir)**
 - 📜 Menü gösterimi
 - 👨‍🍳 Şef profilleri
