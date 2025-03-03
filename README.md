@@ -1,5 +1,5 @@
 🍽️ # **Yummy Project Restaurant Yönetim Sistemi**
-🏠 ### **Ana Arayüz (Herkes için erişebilir)**
+-🏠 ### **Ana Arayüz (Herkes için erişebilir)**
 📜 Menü gösterimi
 👨‍🍳 Şef profilleri
 📅 Rezervasyon formu
