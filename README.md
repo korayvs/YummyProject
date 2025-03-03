@@ -1,10 +1,10 @@
 🍽️ # **Yummy Project Restaurant Yönetim Sistemi**
--🏠 ### **Ana Arayüz (Herkes için erişebilir)**
-📜 Menü gösterimi
-👨‍🍳 Şef profilleri
-📅 Rezervasyon formu
-💬 Müşteri yorumları
-🖼️ Fotoğraf galerisi
+- 🏠 ### **Ana Arayüz (Herkes için erişebilir)**
+- 📜 Menü gösterimi
+- 👨‍🍳 Şef profilleri
+- 📅 Rezervasyon formu
+- 💬 Müşteri yorumları
+- 🖼️ Fotoğraf galerisi
 🔑 ### **Admin Paneli (Yalnızca Yetkili Kullanıcılar)**
 📌 CRUD İşlemleri: Menü, şefler, rezervasyonlar, mesajlar ve diğer içeriklerin yönetimi
 📆 Rezervasyon Yönetimi: Rezervasyonları onaylama, reddetme ve görüntüleme
