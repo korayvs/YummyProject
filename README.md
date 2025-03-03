@@ -1,5 +1,5 @@
 # 🍽️ **Yummy Project Restaurant Yönetim Sistemi**
-- ## 🏠 **Ana Arayüz (Herkes için erişebilir)**
+- ## 🏠 **Kullanıcı Arayüzü (Herkes için erişebilir)**
 - 📜 Menü gösterimi
 - 👨‍🍳 Şef profilleri
 - 📅 Rezervasyon formu
@@ -24,3 +24,6 @@
 - 🏗 PartialView, PartialClass
 - 🔄 Giriş & Çıkış Sistemi
 - 🔑 Yetkilendirme & Oturum Yönetimi
+
+### 🏠 **Kullanıcı Arayüzü (UI)**
+![home1][Screenshot_2](https://github.com/user-attachments/assets/1458913f-4d57-4034-b7b2-e5b3406802b9)
