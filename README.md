@@ -26,4 +26,4 @@
 - 🔑 Yetkilendirme & Oturum Yönetimi
 
 ### 🏠 **Kullanıcı Arayüzü (UI)**
-![home1][Screenshot_2](https://github.com/user-attachments/assets/1458913f-4d57-4034-b7b2-e5b3406802b9)
+![Screenshot_2](https://github.com/user-attachments/assets/1458913f-4d57-4034-b7b2-e5b3406802b9)
